@@ -1,0 +1,258 @@
+/* ==================== ESTILOS ESPECÍFICOS DO CADASTRO ==================== */
+
+.signup-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeInUp 0.8s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.signup-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  border-radius: 20px 20px 0 0;
+}
+
+/* ==================== HEADER DO CADASTRO ==================== */
+.signup-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.signup-subtitle {
+  color: #a0aec0;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* ==================== FORMULÁRIO DE CADASTRO ==================== */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==================== FORÇA DA SENHA ==================== */
+.password-strength {
+  margin-top: 8px;
+  display: none;
+}
+
+.form-group input[type="password"]:focus + i + .error-message + .password-strength,
+.form-group input[type="password"]:not(:placeholder-shown) + i + .error-message + .password-strength {
+  display: block;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.strength-fill.weak {
+  width: 25%;
+  background: #e53e3e;
+}
+
+.strength-fill.fair {
+  width: 50%;
+  background: #f7931e;
+}
+
+.strength-fill.good {
+  width: 75%;
+  background: #38a169;
+}
+
+.strength-fill.strong {
+  width: 100%;
+  background: #48bb78;
+}
+
+.strength-text {
+  font-size: 12px;
+  color: #a0aec0;
+}
+
+/* ==================== OPÇÕES DE CADASTRO ==================== */
+.signup-options {
+  margin: 15px 0;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #a0aec0;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff6b35;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.terms-link,
+.privacy-link {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.terms-link:hover,
+.privacy-link:hover {
+  color: #f7931e;
+  text-decoration: underline;
+}
+
+/* ==================== BOTÃO DE CADASTRO ==================== */
+.signup-btn {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: #ffffff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== CADASTRO SOCIAL ==================== */
+.social-signup {
+  display: flex;
+  gap: 15px;
+}
+
+/* ==================== RODAPÉ DO CADASTRO ==================== */
+.signup-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-link {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #f7931e;
+  text-decoration: underline;
+}
+
+/* ==================== VALIDAÇÕES ESPECÍFICAS ==================== */
+.form-group.password-mismatch input {
+  border-color: #e53e3e;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.form-group.password-match input {
+  border-color: #48bb78;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+}
+
+/* ==================== RESPONSIVIDADE PARA CADASTRO ==================== */
+@media (max-width: 768px) {
+  .signup-container {
+    margin: 20px;
+    padding: 30px 25px;
+    max-width: calc(100% - 40px);
+    max-height: calc(100vh - 40px);
+  }
+
+  .signup-form {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 25px 20px;
+  }
+
+  .social-signup {
+    flex-direction: column;
+  }
+
+  .terms-checkbox {
+    font-size: 13px;
+  }
+}
+
+/* ==================== ESTADOS DE LOADING PARA CADASTRO ==================== */
+.signup-btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.signup-btn.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}

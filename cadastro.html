@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub - Cadastro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="stylesheet" href="cadastro-styles.css">
+</head>
+<body>
+    <!-- Fundo animado estilo Netflix -->
+    <div class="animated-background">
+        <div class="cards-container" id="cardsContainer">
+            <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Container de Cadastro -->
+    <div class="signup-container">
+        <div class="signup-header">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>DigitalHub</span>
+            </div>
+            <p class="signup-subtitle">Crie sua conta e junte-se à comunidade</p>
+        </div>
+
+        <form class="signup-form" id="signupForm">
+            <div class="form-group">
+                <label for="fullName">Nome Completo</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Seu nome completo" required>
+                <i class="fas fa-user"></i>
+                <div class="error-message">Por favor, insira seu nome completo</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <i class="fas fa-envelope"></i>
+                <div class="error-message">Por favor, insira um e-mail válido</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                <i class="fas fa-lock"></i>
+                <div class="error-message">A senha deve ter pelo menos 8 caracteres</div>
+                <div class="password-strength">
+                    <div class="strength-bar">
+                        <div class="strength-fill"></div>
+                    </div>
+                    <span class="strength-text">Força da senha</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+                <i class="fas fa-lock"></i>
+                <div class="error-message">As senhas não coincidem</div>
+            </div>
+
+            <div class="signup-options">
+                <label class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <span>Aceito os <a href="#" class="terms-link">Termos de Uso</a> e <a href="#" class="privacy-link">Política de Privacidade</a></span>
+                </label>
+            </div>
+
+            <button type="submit" class="signup-btn">
+                Criar Conta
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <div class="divider">
+            <span>ou cadastre-se com</span>
+        </div>
+
+        <div class="social-signup">
+            <a href="#" class="social-btn google">
+                <i class="fab fa-google"></i>
+                Google
+            </a>
+            <a href="#" class="social-btn github">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+        </div>
+
+        <div class="signup-footer">
+            <p class="login-link">
+                Já tem uma conta? <a href="index.html">Faça login</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+    <script src="cadastro-script.js"></script>
+</body>
+</html>

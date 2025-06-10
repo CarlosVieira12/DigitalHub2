@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub - Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+    <!-- Fundo animado estilo Netflix -->
+    <div class="animated-background">
+        <div class="cards-container" id="cardsContainer">
+            <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Container de Login -->
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>DigitalHub</span>
+            </div>
+            <p class="login-subtitle">Faça login para acessar o fórum de tecnologia</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <i class="fas fa-envelope"></i>
+                <div class="error-message">Por favor, insira um e-mail válido</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Sua senha" required>
+                <i class="fas fa-lock"></i>
+                <div class="error-message">A senha deve ter pelo menos 6 caracteres</div>
+            </div>
+
+            <div class="login-options">
+                <label class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <span>Lembrar de mim</span>
+                </label>
+                <a href="esqueceu-senha.html" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+
+            <button type="submit" class="login-btn">
+                Entrar
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <div class="divider">
+            <span>ou continue com</span>
+        </div>
+
+        <div class="social-login">
+            <a href="#" class="social-btn google">
+                <i class="fab fa-google"></i>
+                Google
+            </a>
+            <a href="#" class="social-btn github">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+        </div>
+
+        <div class="login-footer">
+            <p class="signup-link">
+                Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>

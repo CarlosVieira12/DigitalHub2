@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub - Meu Perfil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="stylesheet" href="perfil-styles.css">
+</head>
+<body>
+    <!-- Fundo animado estilo Netflix -->
+    <div class="animated-background">
+        <div class="cards-container" id="cardsContainer">
+            <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Container de Perfil -->
+    <div class="profile-container">
+        <!-- Header do Perfil -->
+        <div class="profile-header">
+            <div class="profile-avatar-section">
+                <div class="profile-avatar">
+                    <img src="https://i.pravatar.cc/120?img=68" alt="J.A.R.V.I.S." id="profileImage">
+                    <div class="avatar-overlay">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">J.A.R.V.I.S.</h1>
+                    <p class="profile-username">@jarvis_ai</p>
+                    <p class="profile-bio">Desenvolvedor Full Stack | Especialista em IA | Entusiasta de tecnologia</p>
+                    <div class="profile-badges">
+                        <span class="badge verified">
+                            <i class="fas fa-check-circle"></i>
+                            Verificado
+                        </span>
+                        <span class="badge premium">
+                            <i class="fas fa-crown"></i>
+                            Premium
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-actions">
+                <button class="btn-edit-profile" id="editProfileBtn">
+                    <i class="fas fa-edit"></i>
+                    Editar Perfil
+                </button>
+                <button class="btn-settings" onclick="window.location.href='configuracoes.html'">
+                    <i class="fas fa-cog"></i>
+                    Configurações
+                </button>
+            </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="profile-stats">
+            <div class="stat-item">
+                <div class="stat-number">127</div>
+                <div class="stat-label">Posts</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2.4k</div>
+                <div class="stat-label">Comentários</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15.8k</div>
+                <div class="stat-label">Curtidas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">892</div>
+                <div class="stat-label">Seguidores</div>
+            </div>
+        </div>
+
+        <!-- Tabs de Conteúdo -->
+        <div class="profile-tabs">
+            <button class="tab-btn active" data-tab="posts">
+                <i class="fas fa-newspaper"></i>
+                Meus Posts
+            </button>
+            <button class="tab-btn" data-tab="activity">
+                <i class="fas fa-chart-line"></i>
+                Atividade
+            </button>
+            <button class="tab-btn" data-tab="achievements">
+                <i class="fas fa-trophy"></i>
+                Conquistas
+            </button>
+        </div>
+
+        <!-- Conteúdo das Tabs -->
+        <div class="tab-content active" id="posts">
+            <div class="posts-grid">
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="post-info">
+                            <h3>Como implementar IA em aplicações web</h3>
+                            <p class="post-meta">Há 2 dias • 234 visualizações</p>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 45</span>
+                        <span><i class="fas fa-comment"></i> 12</span>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="post-info">
+                            <h3>Machine Learning com Python: Guia completo</h3>
+                            <p class="post-meta">Há 5 dias • 1.2k visualizações</p>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 128</span>
+                        <span><i class="fas fa-comment"></i> 34</span>
+                    </div>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="post-info">
+                            <h3>React Hooks: Dicas avançadas</h3>
+                            <p class="post-meta">Há 1 semana • 856 visualizações</p>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span><i class="fas fa-heart"></i> 89</span>
+                        <span><i class="fas fa-comment"></i> 23</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="activity">
+            <div class="activity-timeline">
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p>Curtiu o post <strong>"Docker para iniciantes"</strong></p>
+                        <span class="activity-time">Há 2 horas</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p>Comentou em <strong>"Melhores práticas de segurança"</strong></p>
+                        <span class="activity-time">Há 4 horas</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p>Publicou <strong>"Como implementar IA em aplicações web"</strong></p>
+                        <span class="activity-time">Há 2 dias</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="achievements">
+            <div class="achievements-grid">
+                <div class="achievement-card earned">
+                    <div class="achievement-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Streak Master</h3>
+                    <p>30 dias consecutivos ativos</p>
+                </div>
+
+                <div class="achievement-card earned">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Top Contributor</h3>
+                    <p>100+ posts publicados</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Leader</h3>
+                    <p>1000 seguidores</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Expert</h3>
+                    <p>500+ curtidas recebidas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão Voltar -->
+        <div class="profile-footer">
+            <button class="btn-back" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Perfil</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="edit-form" id="editForm">
+                <div class="form-group">
+                    <label for="editName">Nome</label>
+                    <input type="text" id="editName" value="J.A.R.V.I.S.">
+                </div>
+                <div class="form-group">
+                    <label for="editUsername">Nome de usuário</label>
+                    <input type="text" id="editUsername" value="jarvis_ai">
+                </div>
+                <div class="form-group">
+                    <label for="editBio">Bio</label>
+                    <textarea id="editBio" rows="3">Desenvolvedor Full Stack | Especialista em IA | Entusiasta de tecnologia</textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" id="cancelEdit">Cancelar</button>
+                    <button type="submit" class="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+    <script src="perfil-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub - Recuperar Senha</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="stylesheet" href="esqueceu-senha-styles.css">
+</head>
+<body>
+    <!-- Fundo animado estilo Netflix -->
+    <div class="animated-background">
+        <div class="cards-container" id="cardsContainer">
+            <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Container de Recuperação de Senha -->
+    <div class="forgot-password-container">
+        <div class="forgot-password-header">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>DigitalHub</span>
+            </div>
+            <h2 class="forgot-password-title">Esqueceu sua senha?</h2>
+            <p class="forgot-password-subtitle">
+                Não se preocupe! Digite seu e-mail e enviaremos um link para redefinir sua senha.
+            </p>
+        </div>
+
+        <form class="forgot-password-form" id="forgotPasswordForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail cadastrado" required>
+                <i class="fas fa-envelope"></i>
+                <div class="error-message">Por favor, insira um e-mail válido</div>
+            </div>
+
+            <button type="submit" class="forgot-password-btn">
+                <i class="fas fa-paper-plane"></i>
+                Enviar Link de Recuperação
+            </button>
+        </form>
+
+        <div class="forgot-password-info">
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <span>O link expira em 24 horas</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Processo 100% seguro</span>
+            </div>
+        </div>
+
+        <div class="forgot-password-footer">
+            <p class="back-to-login">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar ao login
+                </a>
+            </p>
+            <p class="signup-link">
+                Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+    <script src="esqueceu-senha-script.js"></script>
+</body>
+</html>

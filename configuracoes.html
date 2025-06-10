@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub - Configurações</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="stylesheet" href="configuracoes-styles.css">
+</head>
+<body>
+    <!-- Fundo animado estilo Netflix -->
+    <div class="animated-background">
+        <div class="cards-container" id="cardsContainer">
+            <!-- Cards serão gerados dinamicamente pelo JavaScript -->
+        </div>
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Container de Configurações -->
+    <div class="settings-container">
+        <!-- Header -->
+        <div class="settings-header">
+            <div class="header-content">
+                <button class="btn-back" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="header-info">
+                    <h1>Configurações</h1>
+                    <p>Gerencie suas preferências e configurações da conta</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Lateral -->
+        <div class="settings-sidebar">
+            <nav class="settings-nav">
+                <button class="nav-item active" data-section="account">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </button>
+                <button class="nav-item" data-section="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span>Notificações</span>
+                </button>
+                <button class="nav-item" data-section="privacy">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacidade</span>
+                </button>
+                <button class="nav-item" data-section="appearance">
+                    <i class="fas fa-palette"></i>
+                    <span>Aparência</span>
+                </button>
+                <button class="nav-item" data-section="security">
+                    <i class="fas fa-lock"></i>
+                    <span>Segurança</span>
+                </button>
+                <button class="nav-item danger" data-section="danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Zona de Perigo</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="settings-content">
+            <!-- Seção Conta -->
+            <div class="settings-section active" id="account">
+                <h2>Informações da Conta</h2>
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>E-mail</label>
+                            <span>jarvis@digitalhub.com</span>
+                        </div>
+                        <button class="btn-change">Alterar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Telefone</label>
+                            <span>+55 (11) 99999-9999</span>
+                        </div>
+                        <button class="btn-change">Alterar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Data de nascimento</label>
+                            <span>01/01/1990</span>
+                        </div>
+                        <button class="btn-change">Alterar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Notificações -->
+            <div class="settings-section" id="notifications">
+                <h2>Preferências de Notificação</h2>
+                <div class="setting-group">
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Notificações por e-mail</label>
+                            <span>Receber atualizações por e-mail</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Notificações push</label>
+                            <span>Receber notificações no navegador</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Comentários em posts</label>
+                            <span>Notificar quando alguém comentar</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Novos seguidores</label>
+                            <span>Notificar sobre novos seguidores</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Privacidade -->
+            <div class="settings-section" id="privacy">
+                <h2>Configurações de Privacidade</h2>
+                <div class="setting-group">
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Perfil público</label>
+                            <span>Permitir que outros vejam seu perfil</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Mostrar atividade online</label>
+                            <span>Exibir quando você está online</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Indexação por mecanismos de busca</label>
+                            <span>Permitir que seu perfil apareça no Google</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Aparência -->
+            <div class="settings-section" id="appearance">
+                <h2>Personalização</h2>
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Tema</label>
+                            <span>Escolha entre claro, escuro ou automático</span>
+                        </div>
+                        <select class="theme-select">
+                            <option value="dark" selected>Escuro</option>
+                            <option value="light">Claro</option>
+                            <option value="auto">Automático</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Idioma</label>
+                            <span>Idioma da interface</span>
+                        </div>
+                        <select class="language-select">
+                            <option value="pt-BR" selected>Português (Brasil)</option>
+                            <option value="en-US">English (US)</option>
+                            <option value="es-ES">Español</option>
+                        </select>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Animações reduzidas</label>
+                            <span>Reduzir animações para melhor performance</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Segurança -->
+            <div class="settings-section" id="security">
+                <h2>Segurança da Conta</h2>
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Senha</label>
+                            <span>Última alteração há 3 meses</span>
+                        </div>
+                        <button class="btn-change">Alterar Senha</button>
+                    </div>
+                    <div class="setting-toggle">
+                        <div class="toggle-info">
+                            <label>Autenticação de dois fatores</label>
+                            <span>Adicione uma camada extra de segurança</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Sessões ativas</label>
+                            <span>Gerencie dispositivos conectados</span>
+                        </div>
+                        <button class="btn-change">Ver Sessões</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Download dos dados</label>
+                            <span>Baixe uma cópia dos seus dados</span>
+                        </div>
+                        <button class="btn-change">Solicitar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Zona de Perigo -->
+            <div class="settings-section" id="danger">
+                <h2>Zona de Perigo</h2>
+                <div class="setting-group danger-zone">
+                    <div class="danger-item">
+                        <div class="danger-info">
+                            <label>Desativar conta</label>
+                            <span>Desative temporariamente sua conta</span>
+                        </div>
+                        <button class="btn-danger">Desativar</button>
+                    </div>
+                    <div class="danger-item">
+                        <div class="danger-info">
+                            <label>Excluir conta</label>
+                            <span>Exclua permanentemente sua conta e todos os dados</span>
+                        </div>
+                        <button class="btn-danger">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+    <script src="configuracoes-script.js"></script>
+</body>
+</html>

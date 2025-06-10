@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub - Fórum de Tecnologia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dropdown-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de progresso de scroll -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>DigitalHub</span>
+            </div>
+            <nav class="nav-icons">
+                <i class="fas fa-home active"></i>
+                <i class="fas fa-print"></i>
+                <i class="fas fa-users"></i>
+                <i class="fas fa-eye"></i>
+                <i class="fas fa-wrench"></i>
+            </nav>
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" placeholder="Digite aqui para pesquisar...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <i class="fas fa-comment"></i>
+            <i class="fas fa-bell"></i>
+            <div class="user-profile" id="userDropdown">
+                <div class="user-trigger" id="userTrigger">
+                    <img src="https://i.pravatar.cc/32?img=68" alt="User">
+                    <span>J.A.R.V.I.S.</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </div>
+                
+                <!-- Menu Dropdown -->
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-header">
+                        <img src="https://i.pravatar.cc/50?img=68" alt="J.A.R.V.I.S." class="dropdown-avatar">
+                        <div class="dropdown-user-info">
+                            <span class="dropdown-name">J.A.R.V.I.S.</span>
+                            <span class="dropdown-email">jarvis@digitalhub.com</span>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <a href="perfil.html" class="dropdown-item">
+                        <i class="fas fa-user"></i>
+                        <span>Meu Perfil</span>
+                    </a>
+
+                    <a href="configuracoes.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Posts Salvos</span>
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Estatísticas</span>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-moon"></i>
+                        <span>Modo Escuro</span>
+                        <div class="toggle-switch small">
+                            <input type="checkbox" id="darkModeToggle" checked>
+                            <span class="slider small"></span>
+                        </div>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Ajuda & Suporte</span>
+                    </a>
+
+                    <a href="index.html" class="dropdown-item logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+    <div class="sidebar-scroll-indicator" style="display:none;">Deslize para ver mais</div>
+            <div class="sidebar-section">
+                <div class="sidebar-item active">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <div class="item-title">Mais novo e recente</div>
+                        <div class="item-subtitle">Conteúdo mais recente da comunidade</div>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <div class="item-title">Populares do dia</div>
+                        <div class="item-subtitle">Posts mais populares de hoje</div>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-user-friends"></i>
+                    <div>
+                        <div class="item-title">Seguindo</div>
+                        <div class="item-subtitle">Atividades de quem você segue</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nova seção: Tecnologias em Alta -->
+            <div class="trending-tech">
+                <h3>
+                    <i class="fas fa-chart-line"></i>
+                    Tecnologias em Alta
+                </h3>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-info">
+                        <span class="tech-name">React</span>
+                        <span class="tech-trend">+15% esta semana</span>
+                    </div>
+                    <div class="tech-arrow">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-info">
+                        <span class="tech-name">Python</span>
+                        <span class="tech-trend">+8% esta semana</span>
+                    </div>
+                    <div class="tech-arrow">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="tech-info">
+                        <span class="tech-name">JavaScript</span>
+                        <span class="tech-trend">+12% esta semana</span>
+                    </div>
+                    <div class="tech-arrow">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div class="tech-info">
+                        <span class="tech-name">Docker</span>
+                        <span class="tech-trend">+22% esta semana</span>
+                    </div>
+                    <div class="tech-arrow">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="tech-info">
+                        <span class="tech-name">AWS</span>
+                        <span class="tech-trend">+18% esta semana</span>
+                    </div>
+                    <div class="tech-arrow">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nova seção: Comunidades Ativas -->
+            <div class="active-communities">
+                <h3>
+                    <i class="fas fa-users"></i>
+                    Comunidades Ativas
+                </h3>
+                <div class="community-item">
+                    <div class="community-avatar">
+                        <img src="https://picsum.photos/40/40?random=1" alt="Frontend Brasil">
+                    </div>
+                    <div class="community-info">
+                        <span class="community-name">Frontend Brasil</span>
+                        <span class="community-members">12.5k membros</span>
+                    </div>
+                    <div class="community-status">
+                        <div class="status-dot active"></div>
+                        <span class="status-text">234 online</span>
+                    </div>
+                </div>
+                <div class="community-item">
+                    <div class="community-avatar">
+                        <img src="https://picsum.photos/40/40?random=2" alt="Python Developers">
+                    </div>
+                    <div class="community-info">
+                        <span class="community-name">Python Developers</span>
+                        <span class="community-members">8.7k membros</span>
+                    </div>
+                    <div class="community-status">
+                        <div class="status-dot active"></div>
+                        <span class="status-text">156 online</span>
+                    </div>
+                </div>
+                <div class="community-item">
+                    <div class="community-avatar">
+                        <img src="https://picsum.photos/40/40?random=3" alt="DevOps Community">
+                    </div>
+                    <div class="community-info">
+                        <span class="community-name">DevOps Community</span>
+                        <span class="community-members">6.2k membros</span>
+                    </div>
+                    <div class="community-status">
+                        <div class="status-dot active"></div>
+                        <span class="status-text">89 online</span>
+                    </div>
+                </div>
+                <div class="community-item">
+                    <div class="community-avatar">
+                        <img src="https://picsum.photos/40/40?random=4" alt="Mobile Dev">
+                    </div>
+                    <div class="community-info">
+                        <span class="community-name">Mobile Dev</span>
+                        <span class="community-members">4.8k membros</span>
+                    </div>
+                    <div class="community-status">
+                        <div class="status-dot active"></div>
+                        <span class="status-text">67 online</span>
+                    </div>
+                </div>
+                <div class="community-item">
+                    <div class="community-avatar">
+                        <img src="https://picsum.photos/40/40?random=5" alt="Data Science">
+                    </div>
+                    <div class="community-info">
+                        <span class="community-name">Data Science</span>
+                        <span class="community-members">9.1k membros</span>
+                    </div>
+                    <div class="community-status">
+                        <div class="status-dot active"></div>
+                        <span class="status-text">198 online</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="post-input">
+                <img src="https://i.pravatar.cc/40?img=68" alt="User" class="user-avatar">
+                <input type="text" placeholder="Vamos compartilhar o que está acontecendo na sua mente...">
+                <button class="post-btn">Criar postagem</button>
+            </div>
+
+            <div class="posts">
+                <!-- Post 1 - Criptografia -->
+                <article class="post">
+                    <div class="post-image">
+                        <img src="https://picsum.photos/400/300?random=10" alt="Criptografia">
+                        <div class="post-stats">
+                            <span class="views">5,833</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Criptografia de dados: Como proteger minhas informações confidenciais?</h3>
+                        <div class="post-tags">
+                            <span>Arquivo</span>
+                            <span>Malware</span>
+                            <span>Criptografia</span>
+                        </div>
+                        <div class="post-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/32?img=12" alt="Alexander Smith">
+                                <span>Alexander Smith</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>1,241,274 Visualizações</span>
+                                <span>36,645 Curtidas</span>
+                                <span>51 Comentários</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <span class="out-badge">OUT</span>
+                        <span class="post-number">1</span>
+                    </div>
+                </article>
+
+                <!-- Post 2 - Phishing -->
+                <article class="post">
+                    <div class="post-image">
+                        <img src="https://picsum.photos/400/300?random=11" alt="Phishing">
+                        <div class="post-stats">
+                            <span class="views">3,241</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Como me proteger de ataques de phishing: Quais são os sinais de alerta?</h3>
+                        <div class="post-tags">
+                            <span>Dica</span>
+                            <span>Phishing</span>
+                            <span>Tutoriais</span>
+                        </div>
+                        <div class="post-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/32?img=33" alt="Lucas Ramos">
+                                <span>Lucas Ramos</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>10,103 Visualizações</span>
+                                <span>148 Curtidas</span>
+                                <span>194 Comentários</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <span class="out-badge">OUT</span>
+                        <span class="post-number">2</span>
+                    </div>
+                </article>
+
+                <!-- Post 3 - Programação -->
+                <article class="post">
+                    <div class="post-image">
+                        <img src="https://picsum.photos/400/300?random=12" alt="Programação">
+                        <div class="post-stats">
+                            <span class="views">7,892</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Aprendendo a programar: Quais são os melhores recursos para um iniciante?</h3>
+                        <div class="post-tags">
+                            <span>Programação</span>
+                            <span>Iniciante</span>
+                            <span>Dicas</span>
+                        </div>
+                        <div class="post-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/32?img=51" alt="Gabriel Stark">
+                                <span>Gabriel Stark</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>24,753 Visualizações</span>
+                                <span>4,733 Curtidas</span>
+                                <span>209 Comentários</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <span class="out-badge">OUT</span>
+                        <span class="post-number">3</span>
+                    </div>
+                </article>
+
+                <!-- Post 4 - Banco de dados -->
+                <article class="post">
+                    <div class="post-image">
+                        <img src="https://picsum.photos/400/300?random=13" alt="Banco de dados">
+                        <div class="post-stats">
+                            <span class="views">4,567</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Melhores práticas para gerenciamento de banco de dados: Como otimizar meu banco de dados?</h3>
+                        <div class="post-tags">
+                            <span>Banco</span>
+                            <span>Banco de dados</span>
+                            <span>Otimização</span>
+                        </div>
+                        <div class="post-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/32?img=23" alt="Ana Carolina">
+                                <span>Ana Carolina</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>64,785 Visualizações</span>
+                                <span>41 Curtidas</span>
+                                <span>30 Comentários</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <span class="out-badge">OUT</span>
+                        <span class="post-number">4</span>
+                    </div>
+                </article>
+
+                <!-- Post 5 - Python -->
+                <article class="post">
+                    <div class="post-image">
+                        <img src="https://picsum.photos/400/300?random=14" alt="Python">
+                        <div class="post-stats">
+                            <span class="views">9,123</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3>Erro no meu código: Por que meu script Python não está funcionando?</h3>
+                        <div class="post-tags">
+                            <span>Python</span>
+                            <span>Debugging</span>
+                        </div>
+                        <div class="post-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/32?img=45" alt="Maria Alice">
+                                <span>Maria Alice</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>132,268 Visualizações</span>
+                                <span>84,794 Curtidas</span>
+                                <span>41 Comentários</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <span class="out-badge">OUT</span>
+                        <span class="post-number">5</span>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="encontros-section">
+                <h3>Encontros →</h3>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">1</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>Perfil da empresa na Microsoft</h4>
+                        <p>Vamos conversar sobre oportunidades de carreira...</p>
+                        <span class="encontro-time">há 3 min</span>
+                    </div>
+                </div>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">2</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>Design Meetups USA | Dribbble</h4>
+                        <p>Discussão sobre tendências de design...</p>
+                        <span class="encontro-time">há 7 min</span>
+                    </div>
+                </div>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">3</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>Meetup Brand Identity Design - Behance</h4>
+                        <p>Workshop sobre identidade visual...</p>
+                        <span class="encontro-time">há 12 min</span>
+                    </div>
+                </div>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">4</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>React Conference 2024</h4>
+                        <p>Conferência sobre as novidades do React...</p>
+                        <span class="encontro-time">há 15 min</span>
+                    </div>
+                </div>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">5</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>DevOps Summit Brasil</h4>
+                        <p>Evento sobre práticas DevOps modernas...</p>
+                        <span class="encontro-time">há 18 min</span>
+                    </div>
+                </div>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">6</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>AI & Machine Learning Meetup</h4>
+                        <p>Discussão sobre IA e aprendizado de máquina...</p>
+                        <span class="encontro-time">há 22 min</span>
+                    </div>
+                </div>
+                <div class="encontro-item">
+                    <div class="encontro-info">
+                        <span class="out-badge">OUT</span>
+                        <span class="encontro-number">7</span>
+                    </div>
+                    <div class="encontro-content">
+                        <h4>Startup Weekend São Paulo</h4>
+                        <p>Evento de empreendedorismo e inovação...</p>
+                        <span class="encontro-time">há 25 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcasts-section">
+                <h3>Podcasts →</h3>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=20" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Vendas em negócios e popular sobre vendas em massa e negócios</h4>
+                        <span class="podcast-time">há 2 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=21" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>A vida mental como fundamento e a importância da concentração...</h4>
+                        <span class="podcast-time">há 5 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=22" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Crescendo pela LGBTQ+ em 2024 em 1 Mês, Startups, Negócios</h4>
+                        <span class="podcast-time">há 8 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=23" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Mente mental e a utilização de em 2025 para sua Validação de Tráfego</h4>
+                        <span class="podcast-time">há 12 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=24" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Defenda, Indexação e produtividade como funciona esta com Filtrar</h4>
+                        <span class="podcast-time">há 15 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=25" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>A vida mental como fundamento e a importância da concentração</h4>
+                        <span class="podcast-time">há 18 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=26" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Tecnologia e Inovação: O Futuro dos Negócios Digitais</h4>
+                        <span class="podcast-time">há 22 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=27" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Programação para Iniciantes: Primeiros Passos no Desenvolvimento</h4>
+                        <span class="podcast-time">há 25 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=28" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Cibersegurança: Protegendo Dados em um Mundo Digital</h4>
+                        <span class="podcast-time">há 28 min</span>
+                    </div>
+                </div>
+                <div class="podcast-item">
+                    <img src="https://picsum.photos/60/60?random=29" alt="Podcast">
+                    <div class="podcast-content">
+                        <h4>Cloud Computing: Transformando a Infraestrutura de TI</h4>
+                        <span class="podcast-time">há 32 min</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Indicador de scroll para sidebar direita -->
+    <div class="scroll-indicator">Mais conteúdo ↓</div>
+
+    <script src="script.js"></script>
+    <script src="dropdown-script.js"></script>
+</body>
+</html>

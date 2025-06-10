@@ -1,0 +1,260 @@
+/* ==================== ESTILOS ESPECÍFICOS DA RECUPERAÇÃO DE SENHA ==================== */
+
+.forgot-password-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.forgot-password-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  border-radius: 20px 20px 0 0;
+}
+
+/* ==================== HEADER DA RECUPERAÇÃO ==================== */
+.forgot-password-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.forgot-password-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 15px 0 10px 0;
+}
+
+.forgot-password-subtitle {
+  color: #a0aec0;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* ==================== FORMULÁRIO DE RECUPERAÇÃO ==================== */
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* ==================== BOTÃO DE RECUPERAÇÃO ==================== */
+.forgot-password-btn {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: #ffffff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.forgot-password-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.forgot-password-btn:active {
+  transform: translateY(0);
+}
+
+.forgot-password-btn i {
+  font-size: 16px;
+}
+
+/* ==================== INFORMAÇÕES ADICIONAIS ==================== */
+.forgot-password-info {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #a0aec0;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item i {
+  color: #ff6b35;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+/* ==================== RODAPÉ DA RECUPERAÇÃO ==================== */
+.forgot-password-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-to-login {
+  margin-bottom: 15px;
+}
+
+.back-to-login a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-to-login a:hover {
+  color: #f7931e;
+  text-decoration: underline;
+}
+
+.back-to-login i {
+  font-size: 12px;
+}
+
+.signup-link {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #f7931e;
+  text-decoration: underline;
+}
+
+/* ==================== RESPONSIVIDADE PARA RECUPERAÇÃO ==================== */
+@media (max-width: 768px) {
+  .forgot-password-container {
+    margin: 20px;
+    padding: 30px 25px;
+    max-width: calc(100% - 40px);
+  }
+
+  .forgot-password-title {
+    font-size: 22px;
+  }
+
+  .forgot-password-subtitle {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forgot-password-container {
+    padding: 25px 20px;
+  }
+
+  .forgot-password-title {
+    font-size: 20px;
+  }
+
+  .info-item {
+    font-size: 13px;
+  }
+}
+
+/* ==================== ESTADOS DE LOADING PARA RECUPERAÇÃO ==================== */
+.forgot-password-btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.forgot-password-btn.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ==================== ESTADO DE SUCESSO ==================== */
+.forgot-password-container.success .forgot-password-header {
+  margin-bottom: 25px;
+}
+
+.forgot-password-container.success .forgot-password-title {
+  color: #48bb78;
+}
+
+.forgot-password-container.success .forgot-password-subtitle {
+  color: #68d391;
+}
+
+.success-message {
+  background: rgba(72, 187, 120, 0.1);
+  border: 1px solid rgba(72, 187, 120, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.success-message i {
+  color: #48bb78;
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.success-message h3 {
+  color: #48bb78;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  color: #68d391;
+  font-size: 14px;
+  line-height: 1.5;
+}
